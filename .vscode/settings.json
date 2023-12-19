@@ -1,0 +1,5 @@
+{
+    "ansible.lightspeed.suggestions.enabled": true,
+    "ansible.lightspeed.enabled": true,
+    "ansible.python.interpreterPath": "c:\\Users\\Ahmed\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+}
