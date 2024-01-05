@@ -8,7 +8,8 @@
 
   rules:
     - name: AWS - Run EC2 Playbook for Scaling
-      condition: true  # Always true, ensuring action is taken on any request 
+      condition: 
+      event.payload.name == "test"
 
       action:
         run_job_template:
