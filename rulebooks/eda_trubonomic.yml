@@ -9,7 +9,7 @@
   rules:
     - name: AWS - Run EC2 Playbook for Scaling
       condition: 
-        event.payload.target.className == "VirtualMachine" 
+        name="test" 
 
       action:
         run_job_template:
