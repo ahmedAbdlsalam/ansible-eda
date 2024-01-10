@@ -7,7 +7,7 @@
         port: 5000
 
   rules:
-    - name: AWS - Print Request Payload
+    - name: Print Request Payload
       condition:
         event.payload.name == "test"
 
