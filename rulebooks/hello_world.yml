@@ -1,6 +1,6 @@
 ---
 - name: Hello World Playbook
-  hosts: your_target_host
+  hosts: localhost
   tasks:
     - name: Print Hello World
       debug:
