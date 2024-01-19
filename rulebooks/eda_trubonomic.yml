@@ -15,4 +15,5 @@
         run_job_template:
           name: 'test'
           organization: 'Default'
-          
+          job_args:
+            action: event.payload.action
