@@ -16,4 +16,5 @@
           name: 'test'
           organization: 'Default'
           job_args:
-            action: "{{ event['payload']['action'] }}"
+            extra_vars:
+              action: "{{ event['payload']['action'] }}"
