@@ -1,0 +1,7 @@
+---
+- name: Print Hello World on dynamic inventory
+  hosts: "{{ extra_vars.inventory }}"
+  tasks:
+    - name: Say Hello!
+      debug:
+        msg: "Hello World for: {{ inventory_hostname }}"
