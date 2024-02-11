@@ -5,3 +5,7 @@
     - name: Say Hello!
       debug:
         msg: "Hello World for: {{ inventory_hostname }}"
+
+    - name: Test Update Play
+      debug:
+        msg: "Hello from Ahmed To test the play"
