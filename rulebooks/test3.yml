@@ -4,7 +4,7 @@
   tasks:
     - name: Say Hello!
       debug:
-        msg: "Hello World for: {{ inventory_hostname }}"
+        msg: "Hello World for: {{ extra_vars.inventory }}"
 
     - name: Test Update Play
       debug:
