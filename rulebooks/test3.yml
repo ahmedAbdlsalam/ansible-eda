@@ -1,6 +1,6 @@
 ---
 - name: Print Hello World on dynamic inventory
-  hosts: "{{ extra_vars.inventory }}"
+  hosts: localhost
   tasks:
     - name: Say Hello!
       debug:
