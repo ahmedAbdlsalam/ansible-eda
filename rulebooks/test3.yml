@@ -6,6 +6,10 @@
       debug:
         msg: "Hello World for: {{ inventory }}"
 
+    - name: Say Hello!
+      debug:
+        msg: "Hello World for: {{ order }}"
+
     - name: Test Update Play
       debug:
         msg: "Hello from Ahmed To test the play02222"
