@@ -8,7 +8,7 @@
 
     - name: Say Hello!
       debug:
-        msg: "Hello World for: {{ order }}"
+        msg: "Hello World for: {{ order[0].displayName }}"
 
     - name: Test Update Play
       debug:
