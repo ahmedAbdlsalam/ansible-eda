@@ -4,5 +4,5 @@
   tasks:
     - name: loop through the first list
       debug:
-        msg: "{{ order.item }}"
+        msg: "{{ item }}"
       loop: "{{ order }}"
