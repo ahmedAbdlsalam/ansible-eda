@@ -1,0 +1,8 @@
+---
+- name: Print Hello World on dynamic inventory
+  hosts: localhost
+  tasks:
+    - name: loop through the first list
+      debug:
+        msg: {{ order.item }}
+      loop: "{{ order }}"
