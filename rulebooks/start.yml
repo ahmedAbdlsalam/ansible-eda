@@ -1,0 +1,11 @@
+---
+- name: Print Hello World on dynamic inventory
+  become: true
+  become_method: sudo
+  become_user: root
+  hosts: localhost
+  tasks:
+    - name: command module
+      ansible.builtin.command: "{{ item.startcmd }}"
+      delegate_to: "{{ item.ip[0] }}"
+      loop: "{{ order }}"
