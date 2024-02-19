@@ -11,8 +11,7 @@
     #   loop: "{{ order }}"
 
     - name: command module
-      ansible.builtin.command: 
-        cmd: systemctl stop apache2
+      ansible.builtin.command: "{{ item.stopcmd }}"
       delegate_to: "{{ item.ip[0] }}"
 
       loop: "{{ order }}"
