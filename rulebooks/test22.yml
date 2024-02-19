@@ -5,13 +5,13 @@
   become_user: root
   hosts: localhost
   tasks:
-    - name: loop through the first list
-      debug:
-        msg: "{{ item.stopcmd }}"
-      loop: "{{ order }}"
-
-    # - name: command module
-    #   ansible.builtin.command: "{{ item.stopcmd }}"
-    #   delegate_to: "{{ item.vmhost }}"
-
+    # - name: loop through the first list
+    #   debug:
+    #     msg: "{{ item.stopcmd }}"
     #   loop: "{{ order }}"
+
+    - name: command module
+      ansible.builtin.command: "{{ item.stopcmd }}"
+      delegate_to: "{{ item.vmhost }}"
+
+      loop: "{{ order }}"
