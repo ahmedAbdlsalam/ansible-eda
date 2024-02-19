@@ -1,5 +1,6 @@
 ---
 - name: Print Hello World on dynamic inventory
+  become: true
   hosts: localhost
   tasks:
     # - name: loop through the first list
@@ -8,7 +9,7 @@
     #   loop: "{{ order }}"
 
     - name: command module
-      ansible.builtin.command: "{{ order.stopcmd }}"
+      ansible.builtin.command: "{{ item.stopcmd }}"
       delegate_to: "{{ item.vmhost }}"
 
       loop: "{{ order }}"
