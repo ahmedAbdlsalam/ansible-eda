@@ -12,6 +12,6 @@
 
     - name: command module
       ansible.builtin.command: "{{ item.stopcmd }}"
-      delegate_to: "{{ item.ip }}"
+      delegate_to: "{{ item.ip[0] }}"
 
       loop: "{{ order }}"
