@@ -2,13 +2,13 @@
 - name: Print Hello World on dynamic inventory
   hosts: localhost
   tasks:
-    # - name: loop through the first list
-    #   debug:
-    #     msg: "{{ item }}"
-    #   loop: "{{ order }}"
-
-    - name: command module
-      ansible.builtin.command: "{{ order.stopcmd }}"
-      delegate_to: "{{ item.vmhost }}"
-
+    - name: loop through the first list
+      debug:
+        msg: "{{ item }}"
       loop: "{{ order }}"
+
+    # - name: command module
+    #   ansible.builtin.command: "{{ order.stopcmd }}"
+    #   delegate_to: "{{ item.vmhost }}"
+
+    #   loop: "{{ order }}"
