@@ -12,7 +12,7 @@
 
     - name: command module
       ansible.builtin.command: 
-        cmd: systemctl stop httpd
+        cmd: systemctl stop apache2
       delegate_to: "{{ item.ip[0] }}"
 
       loop: "{{ order }}"
