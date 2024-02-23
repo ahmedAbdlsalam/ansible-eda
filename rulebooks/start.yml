@@ -4,8 +4,25 @@
   become_method: sudo
   become_user: root
   hosts: localhost
+
   tasks:
+
+    - name: Wait for VMs to be reachable
+      wait_for:
+        host: "{{ item.ip[0] }}"
+        port: 22
+        delay: 5
+        timeout: 60
+        loop: "{{ order }}"
+
     - name: command module
       ansible.builtin.command: "{{ item.startcmd }}"
       delegate_to: "{{ item.ip[0] }}"
       loop: "{{ order }}"
+
+
+
+    
+
+
+
