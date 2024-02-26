@@ -5,7 +5,7 @@
   become_user: root
   hosts: localhost
 
-  command_output: []
+
   tasks:
 
     - name: Wait for VMs to be reachable
