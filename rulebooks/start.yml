@@ -22,19 +22,15 @@
       loop: "{{ order }}"
 
     - name: command module for checking the status.
-      # ansible.builtin.debug:
-      #   var: item.split('exit code')
-      # when: item.find('Succeeded') != -1
-      # loop: "{{ order }}"
-    
-      ansible.builtin.command: '{{ item.statuscmd }} -c'
+      ansible.builtin.command: "{{ item.statuscmd }}"
       delegate_to: "{{ item.ip[0] }}"
       loop: "{{ order }}"
       register: command_output
 
-    - name: print the global list command_output
+    - name: Print the output of command module
       ansible.builtin.debug:
-        var: command_output
+        var: item.stdout
+      loop: "{{ command_output.results }}"
     
       
 
