@@ -16,20 +16,20 @@
         timeout: 60
       loop: "{{ order }}"
 
-    - name: command module
+    - name: start command module
       ansible.builtin.command: "{{ item.startcmd }}"
       delegate_to: "{{ item.ip[0] }}"
       loop: "{{ order }}"
 
-    - name: command module for checking the status.
+    - name: check status command module for checking the status.
       ansible.builtin.command: "{{ item.statuscmd }}"
       delegate_to: "{{ item.ip[0] }}"
       loop: "{{ order }}"
       register: command_output
 
-    - name: Print the output of command module
+    - name: Print the output of check status command module
       ansible.builtin.debug:
-        msg: item.stdout
+        msg: "{{ item.stdout }}"
       loop: "{{ command_output.results }}"
     
       
