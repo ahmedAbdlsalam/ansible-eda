@@ -29,7 +29,7 @@
 
     - name: Print the output of command module
       ansible.builtin.debug:
-        var: item.stdout
+        msg: item.stdout
       loop: "{{ command_output.results }}"
     
       
