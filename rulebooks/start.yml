@@ -34,13 +34,13 @@
 
     - name: Print the output of command module
       ansible.builtin.debug:
-        msg: "STATUS: Success"
+        msg: "STATUS: Success {{ item.item.ip[0] }}"
       when: "'up' in item.stdout"
       loop: "{{ command_output.results }}"
 
     - name: Print the output of command module
       ansible.builtin.debug:
-        msg: "STATUS: Failed to shutdown service"
+        msg: "STATUS: Failed to shutdown service {{ item.item.ip[0] }}"
       when: "'up' not in item.stdout"
       loop: "{{ command_output.results }}"
     
