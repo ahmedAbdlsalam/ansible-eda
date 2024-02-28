@@ -18,7 +18,7 @@
 
     - name: print command output
       ansible.builtin.command:
-      msg: "{{ command_output }}"
+        msg: "{{ command_output }}"
     # - name: Print the output of check status command module
     #   ansible.builtin.debug:
     #     msg: "STATUS: Success {{ item.item.ip[0] }}"
