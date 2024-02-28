@@ -15,6 +15,7 @@
       delegate_to: "{{ item.ip[0] }}"
       loop: "{{ order }}"
       register: command_output
+      ignore_errors: true
 
     - name: print command output
       ansible.builtin.command:
