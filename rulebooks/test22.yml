@@ -10,20 +10,20 @@
       delegate_to: "{{ item.ip[0] }}"
       loop: "{{ order }}"
 
-    - name: check status command module for checking the status.
-      ansible.builtin.command: "{{ item.statuscmd }}"
-      delegate_to: "{{ item.ip[0] }}"
-      loop: "{{ order }}"
-      register: command_output
+    # - name: check status command module for checking the status.
+    #   ansible.builtin.command: "{{ item.statuscmd }}"
+    #   delegate_to: "{{ item.ip[0] }}"
+    #   loop: "{{ order }}"
+    #   register: command_output
 
-    - name: Print the output of check status command module
-      ansible.builtin.debug:
-        msg: "STATUS: Success {{ item.item.ip[0] }}"
-      when: "'down' in item.stdout"
-      loop: "{{ command_output.results }}"
+    # - name: Print the output of check status command module
+    #   ansible.builtin.debug:
+    #     msg: "STATUS: Success {{ item.item.ip[0] }}"
+    #   when: "'down' in item.stdout"
+    #   loop: "{{ command_output.results }}"
 
-    - name: Print the output of check status command module
-      ansible.builtin.debug:
-        msg: "STATUS: Failed to shutdown service {{ item.item.ip[0] }}"
-      when: "'down' not in item.stdout"
-      loop: "{{ command_output.results }}"
+    # - name: Print the output of check status command module
+    #   ansible.builtin.debug:
+    #     msg: "STATUS: Failed to shutdown service {{ item.item.ip[0] }}"
+    #   when: "'down' not in item.stdout"
+    #   loop: "{{ command_output.results }}"
